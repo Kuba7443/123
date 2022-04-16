@@ -1,10 +1,20 @@
 {% extends 'main/base.html' %}
 
 {% block title %}
-Kubanych
+{{ title }}
 {% endblock %}
 
 {% block content %}
-    <h1>Kubanych</h1>
-    <p>I am sinior...</p>
+    <h1>KubaShop</h1>
+    {% if tasks %}
+        {% for el in tasks %}
+            <div class="alert-warning mt-2">
+                <h3>{{ el.title }}</h3>
+                <p>{{ el.task }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>We don't have mission</p>
+    {% endif %}
+
 {% endblock %}
